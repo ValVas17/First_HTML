@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+	<script defer async src="intex2.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="https://pngimg.com/uploads/rock_music/rock_music_PNG32.png">
+	<link rel="stylesheet/less" type="text/css" href="intex2.less" />
+	<script scr="./less.min.js" type="text/javascript"></script>
+	<title> Musical store №17 </title>
+
+	 <style>
+		TD { text-align: center; /* Выравнивание по центру */
+		     padding: 3px; /* Поля вокруг текста */ }
+		a {color: #b8860b} /*цвет ссылки*/
+		a:visited {color:  #191970} /*цвет посещенной ссылки*/
+		a:active {color: #b8860b} /*цвет активной ссылки*/
+
+		.menu {position: fixed;}
+		.product { background:  #fff8dc ; 
+			   margin-top: 2em;
+			   width: 70%; 
+			   box-shadow: 0 0 10px black;
+			   opacity: 0.9;
+			   color: black; 
+			   filter: alpha(Opacity=70);}
+		.product2 { background:  #f0e68c ;
+                           box-shadow: 0.4em 0.4em 5px  #b8860b;
+                           opacity: 0.9;
+			   align: center;
+                           filter: alpha(Opacity=70);}
+		.text { width: 75%; }
+	 	    ul.nav{
+                            list-style-type: none;
+                            padding-left: 10px;
+                            margin: 30px;
+			    margin-left: 0;
+                            background-image: url(); 
+                            overflow: hidden;}
+
+		    .nav li {float: left;}
+
+	            ul.nav a {
+	                display: block;
+			width: 20em; 
+	                padding: 10px;
+	                background-color: #eee8aa;
+	                border-top: 0px dashed #333;
+	                border-right: 0px dashed #333;
+	                border-left: 0px solid #333;
+	                color: #333;
+		        font-family: sans-serif;
+		        border-bottom: 10px #333;}	    
+/*
+			    list-style-type: none;
+			    padding-left: 0px;
+			    margin-left: 0px;
+			    background-image: url(); 
+			    overflow: hidden;}
+*/
+	    ul.nav li{display: inline;} a {
+	                border-bottom: 1px dashed #333;}
+                .rightpic { float: right;} 
+                .gradient { background: linear-gradient(to top, #c0c0c0, #708090); /*для header*/
+                            padding: 1px;
+			    height: 17em;
+                            opacity: 0.9;
+                            box-shadow: 0 0 10px black; }
+                .gradient1 { background: linear-gradient(to top, #708090, #c0c0c0); /*для footer*/
+                            padding: 1px;
+                            opacity: 0.9;
+                            box-shadow: 0 0 10px black; }
+		BODY {background:#dcdcdc url(https://images.squarespace-cdn.com/content/v1/588b0c9115d5dbbd78c854a0/1489418574325-S4EW2T46COVYFOBRM0A7/ke17ZwdGBToddI8pDm48kNvT88LknE-K9M4pGNO0Iqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UU_i9-ln4sAC0TGEmkfMFKJn5Kcyb6Y0O9dBHu3N61jtpC969RuPXvt2ZwyzUXQf7Q/WAVE-1s.gif?format=2500w) repeat-x; 
+			  background-size: 100%; /* Фон страницы фиксируется */
+			  background-repeat: repeat-y; /* Изображение повторяется по горизонтали */  }
+
+		.double-border-button {
+			  display: inline-block;
+			  margin: 10px 0px;
+			  padding: 10px 30px;
+			  position: relative;
+			  border: 3px solid #daa520;
+			  font-family: 'Montserrat', sans-serif;
+			  transition: .4s; 
+			  height: 6em; 
+			  width: 8em; }
+		.double-border-button:after {
+			 content: "";
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+  			  bottom: 0;
+			  width: 100%;
+			  height: 100%;
+			  margin: auto;
+			  border: 4px solid rgba(0, 0, 0, 0);
+			  transition: .4s; }
+		.double-border-button:hover:after {
+			  border-color: #daa520;
+			  width: calc(100% - 15px);
+			  height: calc(100% + 15px); }
+
+		
+
+
+
+		.glow-button {
+			text-decoration: none;
+			display: inline-block;
+			padding: 15px 30px;
+			margin: 10px 10px;
+			border-radius: 10px;
+			box-shadow: 0 0 40px 40px #414958 inset, 0 0 0 0 #414958;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: bold;
+			letter-spacing: 2px;
+			color: #d9d98c;
+			width: 12em;
+			transition: .15s ease-in-out;
+			margin-top: 2em;
+			}
+		.glow-button:hover {
+			box-shadow: 0 0 10px 0 #e6ac00 inset, 0 0 10px 4px #e6ac00;
+			color: #592626;
+			width: 16em;
+			}	
+		
+		@media (max-width: 462px) { 
+			.gradient {height: 37em;}
+			.product: {li: block;}
+			}
+
+
+		@media (min-width: 462px) and (max-width: 580px) {
+			.gradient {height: 25em;}
+			.product: {li: block;}
+			}
+
+		@media (min-width: 580px) and (max-width: 1024px) {
+			.product {	
+			display: block; } 
+			.gradient {height: 18em;}
+				}
+
+
+
+		.show_next_1 {
+			} 
+		.modal input {
+			display: block;
+			width: 95%;
+			padding: 10px 0;
+			text-indent: 20px;
+			margin: 10px 0;
+			}
+		.zatemnenie {
+			background: rgba(-40, 20, 30, 0.68);
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: none;
+			z-index: 9999999999;
+			}
+		.modal {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 400px;
+			border: 4px solid #c0c0c0;
+			padding: 40px;
+			transform: translate(-50%, -50%);
+			background-color: #708090;
+
+			}
+		.close_window {
+			cursor: pointer;
+			position: absolute;
+			right: 10px;
+			top: 4px;
+			border: none;
+			color: 	#000000;
+			}
+		.fixed {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 100;
+			}
+		 #more {display:none;}
+	 </style>
+</head>
+<!-- ......................................................................................................................................... -->
+<body>
+	<header class="gradient" background="repeat-x"> <!-- Шапка сайта -->
+			<p><a name="main"></a></p>
+		<a href="https://www.youtube.com"><!-- Логотип с ссылкой -->
+		<img width=200 height=170 src="https://pngimg.com/uploads/rock_music/rock_music_PNG32.png" class="rightpic"></a>
+		<ul class="nav"> <!-- Меню -->
+			<li><form action="#main">
+				<button style="position:fixed" class="double-border-button menu"><img src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/red_repicthousebase_1484336386-1.png" height=60em width=60em></button>
+			</form></li>
+			<li><button style="margin-left:8em; position:fixed" class="double-border-button show_next_1">Связь с нами</button></li>
+			<li><form action="#contacts">
+				<button style="margin-left:16em" class="double-border-button menu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Circle-icons-contacts.svg/1024px-Circle-icons-contacts.svg.png" height=60em width=60em></button>
+			</form></li>
+			<li><form action="#instruments">
+				<button class="double-border-button"><img src="https://image.flaticon.com/icons/png/512/836/836847.png" height=60em width=60em></button>
+			</form></li>
+			<li><form action="#atributs">
+				<button class="double-border-button"><img src="https://static.vecteezy.com/system/resources/previews/001/206/663/non_2x/vintage-music-instrument-icon-cassette-png.png" width=60em height=60em></button>
+			</form></li>
+		</ul>
+	</header>
+	<article class="main">
+
+		<div class="bookmark-list">
+			<span>Закладки:</span> <!--Контейнер для закладок-->
+		</div>
+
+		<center> <div style="background: #daa520" class="product"> <h1> Musical store №17 </h1> </div> </center> 
+		<div>
+			<p><a name="main"></a></p>
+			<center><p class="text" style="background:#ffefd5"> Вот уже более двух недель нас выбирают многие любители музыки!!<span id="dots">..</span><span id="more"> Наш интернет-магазин работает индивидуально с каждым клиентом, угождаем любым капризам. Суть в том, что мы находим товары и доставляем их в любой адрес планеты Земля. Предлагаем Вам товары как для прослушивания музыки и в сложные минуты жизни для утешения, и в минуты спокойствия для еще бoльшего счастья, так и для создания собственных шедевров и записи их как компакт-диски, кассеты, венилл и т.д. </span></p></center>
+				<center><button class="glow-button" id="btn" onclick="readMore()">Подробнее</button></center>
+		</div>
+
+		<div id="article_1">
+<!--
+<p>Lorem<span id="dots">...</span><span id="more">cessitati</span></p>
+<button id="btn" onclick="readMore()">Подробнее</button>
+-->
+					<a name="instruments">
+			<h2> <center> <div style="background: #b0c4de" class="product"> Инструкция по сотрудничеству </div> </center></h2>
+			<a class="bookmark"href="#">Добавить в закладки</a>
+			<center><table class="product"> <!-- Первая таблица --> 
+				<tr>	
+					<td width=30%><img width=80% height=70% src="https://static.wikia.nocookie.net/muppet/images/c/c3/Don_								Music.png/revision/latest/scale-to-width-down/339?cb=20110808141055"></td> <!-- Чувак -->
+					<td width=40%> <p><div class="product2"> Первый шаг к воплощению Вашей мечты в рамках музыки состоит в том, что Вам нужно чётко определиться с тем, чего бы Вы хотели.</p>
+					</div></td>
+					<td width=30%><img width=80% height=60% src="https://pngimg.com/uploads/drum/drum_PNG14345.png"></td>	
+				</tr>
+				<tr>    
+					<td><div width=40% class="product2"><p> Далее свяжитесь с нами по контактам, указанным в самом низу сайта. Чётко опишите Ваши пожелания, укажите свой адрес и ждите, пока мы с Вами свяжемся.</p>
+</div></td>
+					<td><div align="right"><img width=80% height=80% src="https://www.transparentpng.com/thumb/brass-band-
+									instrument-png/siempre-y-en-todas-partes-m-u00dasica-y-sonido-25.png"></td>
+					<td><div width=40% class="product2"><p> Ну и последний шаг: ожидайте посылку по указанному Вами адресу. Надеемся, мы смогли угодить Вашим пожеланиям. Приятного опыта с музыкой!!!! </p></div></td>
+				</tr>
+</span>			
+			</table></center> 
+		</div>
+		<div id="article_2">
+			<a name="atributs"></a>
+		<h2> <center> <div style="background: #b0c4de" class="product"> Наши собственные товары </div> </center> </h2>
+		<a class="bookmark"href="#">Добавить в закладки</a>
+		<center><table id="article_2" class="product"> <!-- Вторая таблица -->
+			<tr>
+				<td width=30%><img width=80% height=70% src="https://images.vexels.com/media/users/3/145813/isolated/preview/
+									3fb5def53066aef6ed31a1815bda34cf-rock-music-logo-by-vexels.png"></td>
+				<td rowspan=3 width=30%><p><div class="product2"> ТОВАРЫ НАШЕЙ ЛИЧНОЙ ФИРМЫ:
+					<ul>
+						<li> Чистые кассеты </li>
+						<li> Кассеты с записями (любимые группы, интереснейшие аудиокниги)</li>
+						<li> Виниловые пластинки </li>
+						<li> Нотные тетради </li>
+						<li> Книги для обучению игре на различных инструментах самостоятельно </li>
+						<li> Различные аксесуары для инструментов (запасные струны, медиаторы, канифоль и т.д.) </li>
+						<li> Красивые блокнотики для текстов Ваших песен </li>
+						<li> и т.д. </li>
+					</ul>
+				</p></td>
+				<td width=30%><img width=80% height=70% src="https://guitarstrings.com.ua/images/Wedgie_all.png"></td>
+			</tr>
+			<tr>
+				<td width=30%><img width=80% height=80% src="https://pngimg.com/uploads/audio_cassette/audio_cassette_PNG92153.png">
+																		</td>
+				<td width=30%><img width=80% height=80% src="https://spektrdp.ru/uploads/posts/2017-04/1491093095_01.png"></td>
+			</tr>
+			<tr>
+				<td width=30%><img width=80% height=75% src="https://img.pngio.com/classic-musical-instruments-clipart-images
+										-gallery-for-free-classical-music-png-340_375.png"></td>
+				<td width=30%><img width=80% height=80% src="https://pngimg.com/uploads/vinyl/vinyl_PNG22.png"></td>
+			</tr>
+		</table></center>
+		</div>
+	</article>
+
+			<a name="bottom"></a>
+	<footer class="gradient1"; background="repeat-x"> 
+			<form action="#main">
+			<!--	<button class="double-border-button rightpic"><img src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/red_repicthousebase_1484336386-1.png" height=60em width=60em></button> --> </form>
+		<p><a name="contacts"></a></p>
+		<div>
+			<p><a href="" target="_blank"><span>+7 905 390-76-88</span></a></p>
+		</div> 
+		<div> 
+			<p><a href="https://vk.com/id292293404" target="_blank"><span> ВКонтакте </span></a></p>
+		</div>
+		<div> 
+			<p><a href="https://e.mail.ru">prib-201_293977@volsu.ru</a></p>
+		</div>
+	</footer>
+<div class="zatemnenie">
+	<div class="modal">
+		<a class="close_window">x</a>
+		<form id="form1" name="form1" action="" method="post">
+			<fieldset>
+				<legend>Форма обратной связи</legend>
+				<p> Ваше имя<br>
+				<input type="text" name="name">
+				</p>
+				<p> Ваш e-mail<br>
+				<input type="text" name="email">
+				</p>
+			<p>
+				<input type="checkbox" name="prigacy">
+				<a href="Forma.pdf" target="_blank">Я, несовершеннолетний, согласен на обработку персональных данных</a>
+				</br></br><a href="Forma2.pdf" target="_blank">Я, совершеннолетний, согласен на обработку персональных данных</a>
+			</p> 
+				<p>
+				<input type="submit" name="submit">
+				</p>
+			</fieldset>
+		</form>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.mi.." type="text/javascript"></script>
+</body>
+</html
